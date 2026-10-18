@@ -1,0 +1,796 @@
+/* ============================================================================
+   CapitalEdge Funding - Premium Fintech Platform Stylesheet
+   ============================================================================
+   Design: Minimalist, sophisticated, premium fintech aesthetic.
+   Colors: Deep navy primary, white/neutral backgrounds, gold accents.
+   Typography: Inter / system font stack.
+   ============================================================================ */
+
+/* ---- CSS Custom Properties ---- */
+:root {
+    --ce-navy: #0a1628;
+    --ce-navy-light: #1a2744;
+    --ce-navy-medium: #132039;
+    --ce-blue: #2563eb;
+    --ce-blue-light: #3b82f6;
+    --ce-gold: #d4a853;
+    --ce-gold-light: #e8c97a;
+    --ce-gold-dark: #b8922e;
+    --ce-white: #ffffff;
+    --ce-bg: #f8f9fb;
+    --ce-bg-alt: #f1f3f8;
+    --ce-border: #e2e6ef;
+    --ce-border-light: #eef1f6;
+    --ce-text: #1a1a2e;
+    --ce-text-secondary: #5a6478;
+    --ce-text-muted: #8b95a8;
+    --ce-success: #059669;
+    --ce-success-bg: #ecfdf5;
+    --ce-warning: #d97706;
+    --ce-warning-bg: #fffbeb;
+    --ce-danger: #dc2626;
+    --ce-danger-bg: #fef2f2;
+    --ce-info: #2563eb;
+    --ce-info-bg: #eff6ff;
+    --ce-shadow-sm: 0 1px 2px rgba(10, 22, 40, 0.04);
+    --ce-shadow: 0 2px 8px rgba(10, 22, 40, 0.06);
+    --ce-shadow-md: 0 4px 16px rgba(10, 22, 40, 0.08);
+    --ce-shadow-lg: 0 8px 32px rgba(10, 22, 40, 0.12);
+    --ce-radius: 8px;
+    --ce-radius-lg: 12px;
+    --ce-radius-xl: 16px;
+    --ce-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ce-transition: all 0.2s ease;
+}
+
+/* ---- Base ---- */
+body {
+    font-family: var(--ce-font);
+    background-color: var(--ce-bg);
+    color: var(--ce-text);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--ce-navy);
+    line-height: 1.3;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.1rem; }
+
+a {
+    color: var(--ce-blue);
+    text-decoration: none;
+    transition: var(--ce-transition);
+}
+a:hover {
+    color: var(--ce-navy);
+}
+
+/* ---- Premium Navigation (Public) ---- */
+.ce-navbar {
+    background: var(--ce-navy);
+    padding: 0;
+    box-shadow: var(--ce-shadow);
+}
+.ce-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--ce-white) !important;
+    letter-spacing: -0.02em;
+    padding: 1rem 0;
+}
+.ce-navbar .navbar-brand .brand-accent {
+    color: var(--ce-gold);
+}
+.ce-navbar .nav-link {
+    color: rgba(255,255,255,0.75) !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem !important;
+    transition: var(--ce-transition);
+}
+.ce-navbar .nav-link:hover,
+.ce-navbar .nav-link.active {
+    color: var(--ce-white) !important;
+}
+.ce-navbar .btn-nav-cta {
+    background: var(--ce-gold);
+    color: var(--ce-navy) !important;
+    font-weight: 600;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--ce-radius);
+    font-size: 0.875rem;
+}
+.ce-navbar .btn-nav-cta:hover {
+    background: var(--ce-gold-light);
+}
+
+/* ---- Hero Section ---- */
+.ce-hero {
+    background: linear-gradient(135deg, var(--ce-navy) 0%, var(--ce-navy-light) 100%);
+    padding: 6rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+}
+.ce-hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 168, 83, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.ce-hero h1 {
+    color: var(--ce-white);
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+.ce-hero .lead {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.15rem;
+    max-width: 580px;
+    line-height: 1.7;
+}
+.ce-hero .btn-hero {
+    background: var(--ce-gold);
+    color: var(--ce-navy);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: var(--ce-radius);
+    border: none;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+.ce-hero .btn-hero:hover {
+    background: var(--ce-gold-light);
+    color: var(--ce-navy);
+    transform: translateY(-1px);
+}
+.ce-hero .btn-hero-outline {
+    background: transparent;
+    color: var(--ce-white);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: var(--ce-radius);
+    font-size: 1rem;
+}
+.ce-hero .btn-hero-outline:hover {
+    border-color: var(--ce-white);
+    color: var(--ce-white);
+}
+
+/* ---- Cards ---- */
+.ce-card {
+    background: var(--ce-white);
+    border: 1px solid var(--ce-border);
+    border-radius: var(--ce-radius-lg);
+    box-shadow: var(--ce-shadow-sm);
+    transition: var(--ce-transition);
+}
+.ce-card:hover {
+    box-shadow: var(--ce-shadow);
+}
+.ce-card-body {
+    padding: 1.5rem;
+}
+.ce-card-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--ce-border-light);
+    font-weight: 600;
+    background: transparent;
+}
+
+/* ---- Summary Cards (Dashboard) ---- */
+.ce-stat-card {
+    background: var(--ce-white);
+    border: 1px solid var(--ce-border);
+    border-radius: var(--ce-radius-lg);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--ce-shadow-sm);
+}
+.ce-stat-card .stat-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ce-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+.ce-stat-card .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ce-navy);
+    letter-spacing: -0.02em;
+}
+.ce-stat-card .stat-change {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+.ce-stat-card .stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--ce-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+.ce-stat-card .stat-icon.bg-navy {
+    background: rgba(10, 22, 40, 0.08);
+    color: var(--ce-navy);
+}
+.ce-stat-card .stat-icon.bg-gold {
+    background: rgba(212, 168, 83, 0.12);
+    color: var(--ce-gold-dark);
+}
+.ce-stat-card .stat-icon.bg-success {
+    background: var(--ce-success-bg);
+    color: var(--ce-success);
+}
+.ce-stat-card .stat-icon.bg-info {
+    background: var(--ce-info-bg);
+    color: var(--ce-info);
+}
+
+/* ---- Buttons ---- */
+.btn-ce-primary {
+    background: var(--ce-navy);
+    color: var(--ce-white);
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--ce-radius);
+    font-size: 0.9rem;
+    transition: var(--ce-transition);
+}
+.btn-ce-primary:hover {
+    background: var(--ce-navy-light);
+    color: var(--ce-white);
+    transform: translateY(-1px);
+    box-shadow: var(--ce-shadow);
+}
+.btn-ce-gold {
+    background: var(--ce-gold);
+    color: var(--ce-navy);
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--ce-radius);
+    font-size: 0.9rem;
+    transition: var(--ce-transition);
+}
+.btn-ce-gold:hover {
+    background: var(--ce-gold-light);
+    color: var(--ce-navy);
+}
+.btn-ce-outline {
+    background: transparent;
+    color: var(--ce-navy);
+    border: 1.5px solid var(--ce-border);
+    font-weight: 500;
+    padding: 0.55rem 1.25rem;
+    border-radius: var(--ce-radius);
+    font-size: 0.9rem;
+    transition: var(--ce-transition);
+}
+.btn-ce-outline:hover {
+    border-color: var(--ce-navy);
+    color: var(--ce-navy);
+}
+.btn-ce-danger {
+    background: var(--ce-danger);
+    color: var(--ce-white);
+    border: none;
+    font-weight: 600;
+}
+.btn-ce-danger:hover {
+    background: #b91c1c;
+    color: var(--ce-white);
+}
+
+/* ---- Form Controls ---- */
+.ce-form-control {
+    border: 1.5px solid var(--ce-border);
+    border-radius: var(--ce-radius);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+    transition: var(--ce-transition);
+    background: var(--ce-white);
+}
+.ce-form-control:focus {
+    border-color: var(--ce-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+.ce-form-label {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--ce-text);
+    margin-bottom: 0.35rem;
+}
+
+/* ---- Status Labels / Badges ---- */
+.ce-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.ce-badge-success { background: var(--ce-success-bg); color: var(--ce-success); }
+.ce-badge-warning { background: var(--ce-warning-bg); color: var(--ce-warning); }
+.ce-badge-danger { background: var(--ce-danger-bg); color: var(--ce-danger); }
+.ce-badge-info { background: var(--ce-info-bg); color: var(--ce-info); }
+.ce-badge-navy { background: rgba(10,22,40,0.08); color: var(--ce-navy); }
+.ce-badge-muted { background: var(--ce-bg-alt); color: var(--ce-text-muted); }
+
+/* ---- Tables ---- */
+.ce-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.ce-table thead th {
+    background: var(--ce-bg);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ce-text-muted);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--ce-border);
+}
+.ce-table tbody td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--ce-border-light);
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+.ce-table tbody tr:hover {
+    background: var(--ce-bg);
+}
+.ce-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---- Sidebar (Dashboard) ---- */
+.ce-sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: var(--ce-navy);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transition: var(--ce-transition);
+    overflow-y: auto;
+}
+.ce-sidebar-brand {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ce-sidebar-brand a {
+    color: var(--ce-white);
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-decoration: none;
+}
+.ce-sidebar-brand .brand-accent {
+    color: var(--ce-gold);
+}
+.ce-sidebar-nav {
+    padding: 1rem 0;
+}
+.ce-sidebar-nav .nav-section {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.5rem;
+}
+.ce-sidebar-nav .nav-item {
+    padding: 0;
+}
+.ce-sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: var(--ce-transition);
+    border-left: 3px solid transparent;
+}
+.ce-sidebar-nav .nav-link i {
+    width: 20px;
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+.ce-sidebar-nav .nav-link:hover {
+    color: var(--ce-white);
+    background: rgba(255,255,255,0.05);
+}
+.ce-sidebar-nav .nav-link.active {
+    color: var(--ce-white);
+    background: rgba(255,255,255,0.08);
+    border-left-color: var(--ce-gold);
+}
+.ce-sidebar-nav .nav-link .badge {
+    margin-left: auto;
+    font-size: 0.7rem;
+}
+
+/* ---- Main Content Area (Dashboard) ---- */
+.ce-main {
+    margin-left: 260px;
+    min-height: 100vh;
+    transition: var(--ce-transition);
+}
+.ce-topbar {
+    background: var(--ce-white);
+    border-bottom: 1px solid var(--ce-border);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.ce-topbar .page-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ce-navy);
+    margin: 0;
+}
+.ce-content {
+    padding: 1.5rem;
+}
+
+/* ---- Test Mode Banner ---- */
+.ce-test-banner {
+    background: var(--ce-warning-bg);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    color: var(--ce-warning);
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* ---- Alerts ---- */
+.ce-alert {
+    border: none;
+    border-radius: var(--ce-radius);
+    padding: 0.85rem 1.15rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.ce-alert-success {
+    background: var(--ce-success-bg);
+    color: var(--ce-success);
+    border-left: 3px solid var(--ce-success);
+}
+.ce-alert-danger {
+    background: var(--ce-danger-bg);
+    color: var(--ce-danger);
+    border-left: 3px solid var(--ce-danger);
+}
+.ce-alert-warning {
+    background: var(--ce-warning-bg);
+    color: var(--ce-warning);
+    border-left: 3px solid var(--ce-warning);
+}
+.ce-alert-info {
+    background: var(--ce-info-bg);
+    color: var(--ce-info);
+    border-left: 3px solid var(--ce-info);
+}
+
+/* ---- Footer (Public) ---- */
+.ce-footer {
+    background: var(--ce-navy);
+    color: rgba(255,255,255,0.6);
+    padding: 3rem 0 1.5rem;
+}
+.ce-footer h6 {
+    color: var(--ce-white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+}
+.ce-footer a {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem;
+    display: block;
+    padding: 0.2rem 0;
+}
+.ce-footer a:hover {
+    color: var(--ce-white);
+}
+.ce-footer .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+}
+
+/* ---- Section (Public pages) ---- */
+.ce-section {
+    padding: 5rem 0;
+}
+.ce-section-alt {
+    background: var(--ce-bg-alt);
+}
+.ce-section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+.ce-section-subtitle {
+    color: var(--ce-text-secondary);
+    font-size: 1.05rem;
+    max-width: 600px;
+}
+
+/* ---- How It Works Steps ---- */
+.ce-steps {
+    counter-reset: step;
+}
+.ce-step {
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: 2rem;
+}
+.ce-step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--ce-navy);
+    color: var(--ce-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* ---- Empty State ---- */
+.ce-empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--ce-text-muted);
+}
+.ce-empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.4;
+}
+.ce-empty-state h5 {
+    color: var(--ce-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* ---- Pagination ---- */
+.ce-pagination .page-link {
+    border: 1px solid var(--ce-border);
+    color: var(--ce-text-secondary);
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--ce-radius);
+    margin: 0 2px;
+}
+.ce-pagination .page-item.active .page-link {
+    background: var(--ce-navy);
+    border-color: var(--ce-navy);
+    color: var(--ce-white);
+}
+
+/* ---- Notification Dropdown ---- */
+.ce-notification-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    background: var(--ce-danger);
+    color: var(--ce-white);
+    border-radius: 50%;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* ---- Agreement Card ---- */
+.ce-agreement-card {
+    border: 2px solid var(--ce-border);
+    border-radius: var(--ce-radius-lg);
+    padding: 1.5rem;
+    transition: var(--ce-transition);
+}
+.ce-agreement-card:hover {
+    border-color: var(--ce-gold);
+}
+.ce-agreement-card.selected {
+    border-color: var(--ce-gold);
+    background: rgba(212, 168, 83, 0.03);
+}
+.ce-agreement-card .agreement-type {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ce-gold-dark);
+    margin-bottom: 0.5rem;
+}
+.ce-agreement-card .agreement-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ce-navy);
+    margin-bottom: 0.5rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991.98px) {
+    .ce-sidebar {
+        transform: translateX(-100%);
+    }
+    .ce-sidebar.show {
+        transform: translateX(0);
+    }
+    .ce-main {
+        margin-left: 0;
+    }
+    .ce-hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .ce-hero {
+        padding: 4rem 0 3rem;
+    }
+    .ce-hero h1 {
+        font-size: 1.7rem;
+    }
+    .ce-section {
+        padding: 3rem 0;
+    }
+    .ce-stat-card .stat-value {
+        font-size: 1.25rem;
+    }
+}
+
+/* ---- Auth Pages ---- */
+.ce-auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--ce-navy) 0%, var(--ce-navy-light) 100%);
+}
+.ce-auth-card {
+    background: var(--ce-white);
+    border-radius: var(--ce-radius-xl);
+    box-shadow: var(--ce-shadow-lg);
+    padding: 2.5rem;
+    max-width: 440px;
+    width: 100%;
+}
+.ce-auth-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.ce-auth-card .subtitle {
+    color: var(--ce-text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* ---- Risk Disclosure Box ---- */
+.ce-risk-box {
+    background: var(--ce-warning-bg);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    border-radius: var(--ce-radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+}
+.ce-risk-box h6 {
+    color: var(--ce-warning);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+.ce-risk-box p {
+    font-size: 0.88rem;
+    color: var(--ce-text-secondary);
+    margin-bottom: 0;
+}
+
+/* ---- Legal Pages ---- */
+.ce-legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+.ce-legal-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.ce-legal-content .legal-meta {
+    color: var(--ce-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--ce-border);
+}
+.ce-legal-content h2 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+.ce-legal-content p, .ce-legal-content li {
+    color: var(--ce-text-secondary);
+    line-height: 1.7;
+}
+.ce-legal-content .draft-banner {
+    background: var(--ce-danger-bg);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: var(--ce-radius);
+    padding: 0.75rem 1rem;
+    color: var(--ce-danger);
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ---- Scrollbar Styling ---- */
+.ce-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.ce-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.ce-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+
+/* ---- Misc Utilities ---- */
+.text-navy { color: var(--ce-navy) !important; }
+.text-gold { color: var(--ce-gold) !important; }
+.text-muted-ce { color: var(--ce-text-muted) !important; }
+.bg-navy { background-color: var(--ce-navy) !important; }
+.fw-600 { font-weight: 600; }
+.fs-sm { font-size: 0.85rem; }
+.border-light-ce { border-color: var(--ce-border-light) !important; }

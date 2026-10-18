@@ -1,0 +1,45 @@
+# Premium Fintech Platform - Apache Configuration
+# 
+# This file routes all requests through index.php (front controller).
+# Requires mod_rewrite to be enabled in Apache.
+#
+# To enable mod_rewrite on Linux:
+#   sudo a2enmod rewrite
+#   sudo systemctl restart apache2  (or: sudo /opt/lampp/lampp restart)
+#
+# On XAMPP, ensure AllowOverride All is set in httpd.conf for this directory.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # If not a real file or directory, route to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Security: Deny access to sensitive file types
+<FilesMatch "\.(env|sql|log|md)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Security: Prevent directory listing
+Options -Indexes
+
+# Security: Prevent access to hidden files
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
