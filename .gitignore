@@ -1,0 +1,27 @@
+# Environment configuration (may contain credentials)
+.env
+
+# Composer dependencies
+/vendor/
+
+# Application logs
+/storage/logs/*.log
+
+# Exported files
+/storage/exports/*.csv
+/storage/exports/*.pdf
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# XAMPP-specific
+*.bak
